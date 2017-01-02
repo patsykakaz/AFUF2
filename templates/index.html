@@ -1,0 +1,63 @@
+{% load pages_tags mezzanine_tags i18n staticfiles bootstrap3 %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>AFUF</title>
+<link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+<link rel="stylesheet" href="{% static "css/mezzanine.css" %}">
+<link rel="stylesheet" href="{% static "css/font-awesome.min.css" %}">
+<link rel="stylesheet" href="{% static "css/bootstrap.override.css" %}">
+<link rel="stylesheet" href="{% static "css/main.css" %}">
+<link href="https://fonts.googleapis.com/css?family=Reem+Kufi" rel="stylesheet">
+<style>
+    body{
+        margin: 0 auto;
+        background-color: white;
+        font-family: 'Reem Kufi', sans-serif;
+    }
+    #main{
+        padding: 15px 0;
+        background-color: rgb(50,50,60);
+        text-align: center;
+        color: white;
+        letter-spacing: 2px;
+        font-weight: lighter;
+    }
+    #logo{
+        position: absolute;
+        width: 30%;
+        opacity: 0;
+        -moz-transition: all 1.5s ease-in-out;
+        -webkit-transition: all 1.5s ease-in-out;
+         -o-transition: all 1.5s ease-in-out;
+        transition: all 1.5s ease-in-out;
+    }
+    #logo img{
+        max-width: 200px;
+        min-width: 80px;
+    }
+    #logo a, #logo a:hover, #logo a:visited{
+        color: #428bca;
+        text-decoration: none;
+    }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>
+$(window).load(function(){
+    $('#logo').css('opacity','1');
+    $('#logo').css('top',($(window).height()-$('#logo').height())/2).css('left', ($(window).width()-$('#logo').width())/2);
+});
+$(window).resize(function(){
+        $('#logo').css('top',($(window).height()-$('#logo').height())/2).css('left', ($(window).width()-$('#logo').width())/2);
+});
+</script>
+</head>
+<body>
+<div id='main'>Le nouveau site de l'AFUF est en construction !</div>
+<div id='logo' class='text-center'>
+    <img src='{% static "img/afuf.jpg" %}' alt='logo AFUF'>
+    <h2><a href="/user/register">Adhésion</a></h2>
+</div>
+
+</body>
+</html>

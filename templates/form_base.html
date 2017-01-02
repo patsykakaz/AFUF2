@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load staticfiles i18n mezzanine_tags bootstrap3 %}
+
+{% block extra_css %}
+<style type="text/css">
+    h1{
+        margin-top: 25px;
+        margin-bottom: 50px;
+    }
+    h5{
+        font-family: 'Reem Kufi', sans-serif;
+        font-size: 16px;
+    }
+    a{
+        font-weight: bold;
+    }
+    b.red{
+        color: rgb(234,97,114);
+    }
+    #logo_header{
+        overflow: hidden;
+        margin-top: 100px;
+        text-align: center;
+    }#logo_header img{
+        max-height: 100px;
+    }
+    .disclaimer{
+        margin-top: 30px;
+    }
+</style>
+{% endblock %}
+
+{% block main %}
+        <div id='logo_header'>
+            <img src='{% static "img/afuf.jpg" %}' alt='logo AFUF' />
+        </div>
+        {% block sub_main %}
+        {% endblock %}
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "form_base.html" %}
+{% load staticfiles i18n mezzanine_tags bootstrap3  %}
+{# {% load pages_tags mezzanine_tags i18n staticfiles keyword_tags %} #}
+
+
+{% block main %}
+<form method="post" action="/user/manual_response/">
+{% csrf_token %}
+    <input type='hidden' name='Data' value='Some data'>
+    <input type='hidden' name='Seal' value='Some Seal'>
+    <input name='useless' value='Some Seal'>
+    <button type="submit" class="btn btn-primary">
+        procéder au paiement
+    </button>
+</form>
+{% endblock %}

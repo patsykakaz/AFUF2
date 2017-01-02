@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load i18n mezzanine_tags bootstrap3 %}
+{# {% load pages_tags mezzanine_tags i18n staticfiles keyword_tags %} #}
+
+{% block extra_js %}
+{% endblock %}
+
+{% block main %}
+    
+    {% if payment_response == "Success" %}
+        <h2 class='text-center'><i class='fa fa-lg fa-thumbs-up'></i> Merci d'avoir adhéré à l'AFUF</h2>
+        <h4>Un mail de confirmation va vous être envoyé d'ici peu de temps. </h4>
+    {% else  %}
+        <h2><i class='fa fa-lg fa-exclamation-triangle'></i> Le paiement a échoué </h2>
+    {% endif %}
+
+{% endblock %}

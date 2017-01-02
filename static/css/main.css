@@ -1,0 +1,35 @@
+
+body{
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: lighter;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 1.6px;
+}
+
+h1,h2,h3,.title{
+    font-family: 'Reem Kufi', sans-serif;
+}
+.text-red, .text-red:hover, .text-red:visited,
+a.text-red, a.text-red:hover, a.text-red:visited{
+    color: rgb(234,97,114);
+}
+
+
+.formZone{
+    padding: 10px 20px;
+    border: 1px solid #E7E7E7;
+    background-color: #F8F8F8;
+    text-align: justify;
+}
+.formZone i.fa{
+    color: #428bca;
+}
+
+footer{
+    margin-top: 80px;
+}
+footer img{
+    max-height: 100px;
+}
