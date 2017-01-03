@@ -17,6 +17,11 @@ from django.contrib.auth.decorators import login_required
 from forms import *
 
 
+@csrf_exempt
+def test(request):
+    print "test request called"
+    return render(request, 'test.html', locals())
+
 def loginView(request):
     error = False
     if request.method == 'POST':
@@ -119,7 +124,7 @@ def payment(request):
 
 @csrf_exempt
 def automatic_response(request):
-    print "automatic response called", request.POST
+    # print "automatic response called", request.POST
     if request.POST and "Data" in request.POST and "Seal" in request.POST:
         data_to_seal = request.POST['Data']+settings.MERCANET_KEY
         hash_object = hashlib.sha256(data_to_seal.encode('utf8'))
@@ -205,12 +210,7 @@ def manual_response(request):
             raise ValueError('Mercanet SEAL is compromised. FUCK OFF.')
     return render(request, 'payment_response.html', locals())
 
-@csrf_exempt
-def test(request):
-    print "test request called"
-    return render(request, 'test.html', locals())
 
-
-# @login_required
+@login_required
 def displayMembers(request):
     pass
